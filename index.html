@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="keywords" content="Document" />
+    <meta name="description" content="Your Description..." />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="resources/swiper js/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <link rel="stylesheet" href="resources/css/loader.css" />
+    <link rel="stylesheet" href="resources/css/hamburger.css" />
+    <link rel="stylesheet" href="resources/css/home.css" />
+    <link rel="stylesheet" href="resources/css/about.css" />
+    <link rel="stylesheet" href="resources/css/services.css">
+    <link rel="stylesheet" href="resources/css/portfolio.css" />
+    <link rel="stylesheet" href="resources/css/blog.css" />
+    <link rel="stylesheet" href="resources/css/contact.css" />
+    <link href="resources/mapbox-gl/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="resources/css/style.css" />
+    <link rel="shortcut icon" href="resources/img/favicon.ico" type="image/x-icon" />
+</head>
+
+<body onload="loaded()">
+    <div class="loader">
+        <div class="c c1"></div>
+        <div class="c c2"></div>
+        <div class="c c3"></div>
+        <div class="c c4"></div>
+        <div class="c c5"></div>
+        <div class="c c6"></div>
+    </div>
+    <script>
+        let loader = document.querySelector(".loader");
+        function loaded() {
+            loader.classList.add("remove");
+            setTimeout(() => {
+                loader.style.display = "none";
+            }, 1000);
+        }
+    </script>
+    <!-- HAMBURGER MENU BUTTON (responsively visible) -->
+    <div class="hamburger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+    </div>
+
+    <!-- THE REAL NAVIGATION -->
+    <nav class="navigation">
+        <h1>
+            Akshat
+            <div></div>
+            <div></div>
+        </h1>
+        <ul>
+            <li><a href="#" onclick="home()">home</a></li>
+            <li>
+                <a href="#" onclick="about(); animate3.play(); animate4.play();">about</a>
+            </li>
+            <li><a href="#" onclick="services(); animate6.play();">services</a></li>
+            <li><a href="#" onclick="portfolio()">projects</a></li>
+            <li><a href="#" onclick="blog()">certificates</a></li>
+            <li>
+                <a href="#" onclick="contact(); animate5.play()">contact</a>
+            </li>
+        </ul>
+        <p>&copy; 2025 Akshat.</p>
+    </nav>
+
+    <div class="container">
+        <div class="layer layer1 active">
+            <div class="home main">
+                <div class="canvas_container">
+                    <canvas></canvas>
+                </div>
+                <div class="content-for-home">
+                    <div class="img-container"></div>
+                    <h1 align="center">Akshat Sharma</h1>
+                    <div class="social-icons">
+                        <div class="s-icon">
+                            <a href="https://www.facebook.com/share/1AHKn7dPmv/"
+                                target="_blank">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <div class="s-name">Facebook</div>
+                        </div>
+                        <div class="s-icon">
+                            <a href="https://www.instagram.com/its._akshat24?igsh=MW14MzFoaWFqNjl5NA=="
+                                target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <div class="s-name">Instagram</div>
+                        </div>
+                        <div class="s-icon">
+                            <a href="https://x.com/AkshatShrm29974?t=Mw24xyTaRjnY130I3dGebw&s=09" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <div class="s-name">X</div>
+                        </div>
+                        <div class="s-icon">
+                            <a href="www.linkedin.com/in/akshat-sharma24" target="_blank">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="s-name">LinkedIn</div>
+                        </div>                        
+                        <div class="s-icon">
+                            <a href="https://github.com/akshat-2411" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <div class="s-name">GitHub</div>
+                        </div>
+                        <div class="s-icon">
+                            <a href="https://leetcode.com/u/Akshat1978/" target="_blank">
+                                <i class="fas fa-code"></i>
+                            </a>
+                            <div class="s-name">LeetCode</div>
+                        </div>
+                    </div>
+
+                    <div class="side-nav">
+                        <button onclick="about(); animate3.play(); animate4.play();">
+                            <span class="w">W</span>
+                            <span class="tooltip"> why you? </span>
+                        </button>
+                        <button onclick="services(); animate6.play();">
+                            <span class="w">W</span>
+                            <span class="tooltip"> what do you do? </span>
+                        </button>
+                        <button onclick="portfolio()">
+                            <span class="w">W</span>
+                            <span class="tooltip">
+                                what have you done?
+                            </span>
+                        </button>
+                        <button onclick="blog()">
+                            <span class="w">W</span>
+                            <span class="tooltip"> what others say? </span>
+                        </button>
+                        <button onclick="contact(); animate5.play()">
+                            <span class="w">W</span>
+                            <span class="tooltip"> where are you? </span>
+                        </button>
+                    </div>
+
+                    <div class="titles-for-side-nav">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer layer2">
+            <div class="about main">
+                <!-- SEGMENT FOR STYLING. -->
+                <div class="styling">
+                    <div class="absolute box"></div>
+                    <div class="absolute circle"></div>
+                    <div class="absolute triangle"></div>
+                    <div class="absolute dots">
+                        <div class="dot dot1"></div>
+                        <div class="dot dot2"></div>
+                        <div class="dot dot3"></div>
+                        <div class="dot dot4"></div>
+                        <div class="dot dot5"></div>
+                        <div class="dot dot6"></div>
+                        <div class="dot dot7"></div>
+                        <div class="dot dot8"></div>
+                        <div class="dot dot9"></div>
+                        <div class="dot dot10"></div>
+                        <div class="dot dot11"></div>
+                        <div class="dot dot12"></div>
+                        <div class="dot dot13"></div>
+                        <div class="dot dot14"></div>
+                        <div class="dot dot15"></div>
+                        <div class="dot dot16"></div>
+                        <div class="dot dot17"></div>
+                        <div class="dot dot18"></div>
+                        <div class="dot dot19"></div>
+                        <div class="dot dot20"></div>
+                        <div class="dot dot21"></div>
+                        <div class="dot dot22"></div>
+                        <div class="dot dot23"></div>
+                        <div class="dot dot24"></div>
+                    </div>
+
+                    <svg class="wave absolute" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 320">
+                        <path fill-opacity="1"
+                            d="M0,320L48,277.3C96,235,192,149,288,122.7C384,96,480,128,576,165.3C672,203,768,245,864,234.7C960,224,1056,160,1152,112C1248,64,1344,32,1392,16L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                        </path>
+                    </svg>
+
+                    <svg class="wave absolute opposite" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1450 320">
+                        <path fill-opacity="1"
+                            d="M0,224L48,213.3C96,203,192,181,288,192C384,203,480,245,576,218.7C672,192,768,96,864,64C960,32,1056,64,1152,101.3C1248,139,1344,181,1392,202.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                        </path>
+                    </svg>
+                </div>
+
+                <!-- REAL CONTENT -->
+                <div class="wrapper">
+                    <div class="face face1">
+                        <div class="content">
+                            <p>Hello,</p>
+                            <h1>I'm Akshat</h1>
+                            <p class="text">
+                                I am a data analyst, and I'm very
+                                passionate and dedicated to my work
+                                as a fresh data analyst, I have acquired
+                                the skills and knowledge necessary to make
+                                your project a success I enjoy every step
+                                of the design process, from discussion and
+                                collaboration.
+                            </p>
+                            <a class="button download" href="resources/img/Akshat_Sharma.pdf" download="akshat_cv">Download
+                                CV</a>
+                            <a class="button hire" href="#" class="hire" onclick="contact(); animate5.play()">Hire
+                                Me.</a>
+                        </div>
+                    </div>
+                    <div class="face face2"></div>
+                </div>
+
+                <!-- THE NAVIGATION OF ABOUT -->
+                <nav class="about_nav">
+                    <ul>
+                        <li>
+                            <a class="active" href="#" data-text="one">Skills</a>
+                        </li>
+                        <li>
+                            <a href="#" data-text="two">Education</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="about_container">
+                    <!-- SKILL BOX -->
+                    <div class="skills">
+                        <div class="skill">
+                            <div class="name">HTML5</div>
+                            <div class="value" style="left: 90%">80%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">CSS3</div>
+                            <div class="value" style="left: 75%">75%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">JavaScript</div>
+                            <div class="value" style="left: 65%">65%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">C</div>
+                            <div class="value" style="left: 50%">70%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">C++</div>
+                            <div class="value" style="left: 55%">80%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">Java</div>
+                            <div class="value" style="left: 45%">70%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">Python3</div>
+                            <div class="value" style="left: 45%">60%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">R</div>
+                            <div class="value" style="left: 45%">80%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill">
+                            <div class="name">Kotlin</div>
+                            <div class="value" style="left: 45%">70%</div>
+                            <div class="percent">
+                                <div class="progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education">
+                        <div class="middle_line"></div>
+                        <div class="cover">
+                            <i class="job_box fas fa-book-reader"></i>
+                            <i class="date">2023 - 2023</i>
+                            <h2>Completed Data Visualization</h2>
+                            <i class="name_company">Lovely Professional University.</i>
+                            <article class="text_hidden">
+                                Developed skills in transforming data into meaningful visual insights using tools like Tableau, Power BI, and Python libraries. 
+                                Gained experience in creating dashboards, charts, and interactive visuals to support data-driven decisions.
+                            </article>
+                        </div>
+                        <div class="whitespace"></div>
+                        <div class="whitespace"></div>
+                        <div class="cover">
+                            <i class="job_box fas fa-book-reader"></i>
+                            <i class="date">2023 - 2023</i>
+                            <h2>Completed Graphics Designing</h2>
+                            <i class="name_company">Lovely Professional University.</i>
+                            <article class="text_hidden">
+                                Learned core design principles, mastered tools like Adobe Photoshop and Illustrator, 
+                                and created visually compelling graphics, logos, and layouts for both digital and print media.
+                            </article>
+                        </div>
+                        <div class="whitespace"></div>
+                        <div class="whitespace"></div>
+                        <div class="cover">
+                            <i class="job_box fas fa-book-reader"></i>
+                            <i class="date">2022 - 2023</i>
+                            <h2>Completed Web Designing Course</h2>
+                            <i class="name_company">Lovely Professional University.</i>
+                            <article class="text_hidden">
+                                Gained hands-on experience in HTML, CSS, JavaScript, and responsive design principles. 
+                                Developed modern, user-friendly web pages and enhanced UI/UX skills through practical projects and real-world examples.
+                            </article>
+                        </div>
+                        <div class="whitespace"></div>
+                        <div class="whitespace"></div>
+                        <div class="cover">
+                            <i class="job_box fas fa-book-open"></i>
+                            <i class="date">2022 - 2026</i>
+                            <h2>Computer Science Engineering</h2>
+                            <i class="name_company">LPU, Jalandhar, India</i>
+                            <article class="text_hidden">
+                                I am currently pursuing my B.Tech in Computer Science Engineering from LPU. 
+                                I am in 3nd year and my current CGPA is 6.42.
+                            </article>
+                        </div>
+                        <div class="whitespace"></div>
+                        <div class="whitespace"></div>
+                        <div class="cover">
+                            <i class="job_box fas fa-book-open"></i>
+                            <i class="date">2020 - 2022</i>
+                            <h2>Higher Secondary Education</h2>
+                            <i class="name_company">Govt. Excellence Higher Secondary School, Kotma, India.</i>
+                            <article class="text_hidden">
+                                I was passed my higher secondary education with 86% in
+                                2022. I have completed my higher secondary education from Govt. Excellence Higher Secondary School.
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer layer3">
+            <div class="services main">
+                <!-- <section class="background">
+                        <div class="bg_wrapper"></div>
+                    </section> -->
+                <div class="hero">
+                    <span class="typography">
+                        <span class="t_dummy">We know how to</span> <br />
+                        <span class="t-box">
+                            <span class="box-side box-front">take risk</span>
+                            <span class="box-side box-top">take a side</span>
+                            <span class="box-side box-back">be different</span>
+                            <span class="box-side box-bottom">be innovative</span>
+                        </span>
+                    </span>
+                    <p class="hero-text">
+                        I am a excellent web designer and faultless
+                        technician. I'm a pleasure to work with, great
+                        value for money and will always go the extra mile
+                        when necessary.
+                    </p>
+                </div>
+                <div class="capabilities left move-little-down">
+                    <img src="resources/img/elements/web_bg.png" alt="" />
+                    <p class="c_content">
+                        <span class="c_title">Web</span>
+                        His creative journey started with Web Design. To
+                        code his own designs, he learned how to code and has
+                        since then worked hard to stay relevant in both
+                        fields. For smooth collaboration with clients he is
+                        now-a-days using programing languages for designing
+                        and prototyping.
+                        <br />
+                        <a href="#">Learn More</a>
+                        <i class="far fa-arrow-alt-circle-right"></i>
+                    </p>
+                </div>
+                <div class="capabilities right">
+                    <p class="c_content">
+                        <span class="c_title">Graphics</span>
+                        With a designers eye for details, Akshat is
+                        passionate about implementing designed into highly
+                        interactive experience by paying close attention to
+                        details, animations and performances.
+                        <br />
+                        <a href="#">Learn More</a>
+                        <i class="far fa-arrow-alt-circle-right"></i>
+                    </p>
+                    <img src="resources/img/elements/graphics_bg.png" alt="" />
+                </div>
+            </div>
+        </div>
+        <div class="layer layer4">
+            <div class="portfolio main">
+                <div class="tip main">
+                    <div class="allContent">
+                        <div class="description" style="display: none">
+                            <div class="pro_intro">
+                                <div class="nameplate">
+                                    <h1>Wedding Couple</h1>
+                                    <span>Category:
+                                        <span style="color: #999">Web Design</span></span>
+                                </div>
+                                <div class="other_text">
+                                    <h2>Project Brief:</h2>
+                                    <p class="pro_brief" style="
+                                                color: #999;
+                                                padding-left: 15px;
+                                            ">
+                                        Lorem ipsum, dolor sit amet
+                                        consectetur adipisicing elit. At
+                                        corrupti modi perferendis iure
+                                        corporis dolores minus asperiores
+                                        nemo debitis veritatis id placeat,
+                                        similique eum recusandae ipsa quia
+                                        cum earum nam?
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="pro_info">
+                                <h2>Project Info</h2>
+                                <p class="Date">
+                                    <b>Date: </b>
+                                    <span style="color: #999">2020</span>
+                                </p>
+                                <p class="client">
+                                    <b>Client: </b>
+                                    <span style="color: #999">xyz</span>
+                                </p>
+                                <p>
+                                    <b>Tools: </b>
+                                    <span style="color: #999">HTML, CSS, JavaScript, React, Kotlin</span>
+                                </p>
+                                <p class="link">
+                                    <b>Web: </b>
+                                    <span style="color: #999"><a href="#">www.domain.com</a></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <button class="closeButton">
+                            <span>Project Details</span>
+                            <div class="icon"></div>
+                        </button>
+                        <button class="exitButton">&times;</button>
+
+                        <div class="port_content">
+                            <div class="swiper-container-2">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="#" alt="web design" />
+                                    </div>
+                                </div>
+                                <!-- Add Pagination -->
+                                <div class="swiper-scrollbar"></div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="about_nav padding_top">
+                    <ul>
+                        <li>
+                            <a class="filter active" href="#" data-filter="all">All</a>
+                        </li>
+                        <li>
+                            <a class="filter" href="#" data-filter=".web">Web Design</a>
+                        </li>
+                        <li>
+                            <a class="filter" href="#" data-filter=".app">Apps</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mymixcont">
+                    <div class="mix web">
+                        <img src="resources/img/portfolios/web/A1.png" alt="" />
+                        <span class="title">Mentor Connect</span>
+                        <span class="port_link">View Project</span>
+                    </div>
+                    <div class="mix web">
+                        <img src="resources/img/portfolios/web/B1.png" alt="" />
+                        <span class="title">Priscripto</span>
+                        <span class="port_link">View Project</span>
+                    </div>
+                    <div class="mix app">
+                        <img src="resources/img/portfolios/app/A1.jpg" alt="" />
+                        <span class="title">Music App</span>
+                        <span class="port_link">View Project</span>
+                    </div>
+                    <div class="mix web">
+                        <img src="resources/img/portfolios/web/C1.png" alt="" />
+                        <span class="title">IPL Data Analysis</span>
+                        <span class="port_link">View Project</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layer layer5">
+            <div class="testimonial">
+                <h1><span>See What My Certificates Say about Me.</span></h1>
+                <div class="swiper-containe">
+                    <div class="mymixcont">
+                        <div class="mix we">
+                            <img src="resources/img/portfolios/certificates/1.jpg" alt="Certificate 1" />
+                            <span class="title">Deep Learning</span>
+                            <span class="port" data-img="resources/img/portfolios/certificates/1.jpg">Certificate</span>
+                        </div>
+                        <div class="mix ico">
+                            <img src="resources/img/portfolios/certificates/2.jpg" alt="Certificate 2" />
+                            <span class="title">DBMS</span>
+                            <span class="port" data-img="resources/img/portfolios/certificates/2.jpg">Certificate</span>
+                        </div>
+                        <div class="mix car">
+                            <img src="resources/img/portfolios/certificates/3.jpg" alt="Certificate 3" />
+                            <span class="title">Prompt Engineering for ChatGPT</span>
+                            <span class="port" data-img="resources/img/portfolios/certificates/3.jpg">Certificate</span>
+                        </div>
+                        <div class="mix we">
+                            <img src="resources/img/portfolios/certificates/4.jpg" alt="Certificate 4" />
+                            <span class="title">GenAi for Everyone</span>
+                            <span class="port" data-img="resources/img/portfolios/certificates/4.jpg">Certificate</span>
+                        </div>
+                        <div class="mix ap">
+                            <img src="resources/img/portfolios/certificates/5.jpg" alt="Certificate 5" />
+                            <span class="title">SQL for Data Analysis</span>
+                            <span class="port" data-img="resources/img/portfolios/certificates/5.jpg">Certificate</span>
+                        </div>
+                        <div class="mix car">
+                            <img src="resources/img/portfolios/certificates/6.jpg" alt="Certificate 6" />
+                            <span class="title">Python for Data Science, Ai & Development</span>
+                            <span class="port" data-img="resources/img/portfolios/certificates/6.jpg">Certificate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal for displaying certificate -->
+        <div id="certificateModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+        
+        <div class="layer layer6">
+            <div class="contact_us">
+                <div id="map"></div>
+                <address class="info_container">
+                    <div class="info info1">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="iname">Phone</span>
+                        <a href="tel:+9100000000000">+917987440874</a>
+                    </div>
+                    <div class="info info2">
+                        <i class="fas fa-home"></i>
+                        <span class="iname">Address</span>
+                        <a <span>Jalandhar</span><br />
+                            <span>Punjab, India</span>
+                        </a>
+                    </div>
+                    <div class="info info3">
+                        <i class="fas fa-envelope"></i>
+                        <span class="iname">Email</span>
+                        <a href="mailto:email1.gmail.com">santosh060878@gmail.com</a>
+                        <a href="mailto:email2.gmail.com">akshat798744@gmail.com</a>
+                    </div>
+                </address>
+
+                <form action="#" method="post">
+                    <h1>Get In Touch</h1>
+                    <div class="inp_field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="name" class="fname" id="fname" placeholder="Full Name" required />
+                    </div>
+                    <div class="inp_field">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" name="email" class="email" id="email" placeholder="Email" required />
+                    </div>
+                    <div class="inp_field">
+                        <i class="fas fa-angle-double-right"></i>
+                        <input type="text" name="subject" class="subject" id="subject" placeholder="Subject" required />
+                    </div>
+                    <textarea name="message" cols="30" rows="5" class="message" id="message" placeholder="Message"
+                        required></textarea>
+                    <button class="submit" id="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-----------------JQUERY {https://jquery.com/} [USED IN portfolio.js]----------------->
+    <script src="resources/js/jquery.min.js"></script>
+    <!-----------------MIX IT UP {https://www.kunkalabs.com/mixitup/} [USED IN portfolio.js]----------------->
+    <script src="resources/js/mixitup.min.js"></script>
+    <!-----------------SWIPER JS {https://swiperjs.com/} [USED IN portfolio.js, blog.js]----------------->
+    <script src="resources/swiper js/swiper-bundle.min.js"></script>
+    <!-----------------MAPBOX GL {https://www.mapbox.com/} [USED IN contact.js]----------------->
+    <script src="resources/mapbox-gl/mapbox-gl.js"></script>
+    <!-----------------EMAIL JS {https://www.emailjs.com/} [USED IN contact.js]----------------->
+    <script src="resources/js/email.min.js"></script>
+    <!-----------------ADDITIONAL SCRIPT FOR EMAIL JS----------------->
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_5OMETIDQ2Nm9qBMtaFNz4");
+        })();
+    </script>
+    <!-----------------VANILLA TILT JS {https://micku7zu.github.io/vanilla-tilt.js/}----------------->
+    <script src="resources/js/vanilla-tilt.min.js"></script>
+    <!-----------------ANIME JS {https://animejs.com/} [USED LOCALLY.]----------------->
+    <script src="resources/js/anime.min.js"></script>
+    <!-----------------LOCAL (HOME)----------------->
+    <script src="resources/js/home.js"></script>
+    <!-----------------LOCAL (ABOUT)----------------->
+    <script src="resources/js/about.js"></script>
+    <!-----------------LOCAL (SERVICES)----------------->
+    <script src="resources/js/services.js"></script>
+    <!-----------------LOCAL (PORTFOLIO)----------------->
+    <script src="resources/js/portfolio.js"></script>
+    <!-----------------LOCAL (BLOG)----------------->
+    <script src="resources/js/blog.js"></script>
+    <!-----------------LOCAL (CONTACT)----------------->
+    <script src="resources/js/contact.js"></script>
+    <!-----------------LOCAL (MAIN FILE)----------------->
+    <script src="resources/js/main.js"></script>
+
+    <!-----------------LOCAL (MAIN FILE { USED TO ANIMATE WEBPAGE.})----------------->
+    <script>
+        const animate1 = anime.timeline({
+            targets: ".circle",
+            loop: true,
+            duration: 2000,
+            direction: "alternate",
+            easing: "easeInOutQuad",
+        });
+        animate1.add({
+            translateX: 350,
+        });
+
+        let dot = document.querySelectorAll(".dot");
+        for (let i = 0; i < dot.length; i++) {
+            const ind = dot[i];
+            const animate2 = anime.timeline({
+                targets: ind,
+                loop: true,
+                direction: "alternate",
+                delay: i * 100,
+            });
+            animate2.add({
+                scale: 2,
+            });
+        }
+
+        let span = document.querySelectorAll(".content .text span");
+        const animate3 = anime.timeline({
+            targets: span,
+            easing: "easeInOutExpo",
+            delay: anime.stagger(20, { direction: "reverse" }),
+            direction: "reverse",
+            autoplay: false,
+        });
+
+        animate3.add({
+            rotate: () => {
+                return anime.random(-360, 360);
+            },
+            translateX: () => {
+                return anime.random(-500, 500);
+            },
+            translateY: () => {
+                return anime.random(-500, 500);
+            },
+            duration: 3000,
+        });
+
+        const animate4 = anime({
+            targets: ".button",
+            scale: [0, 1],
+            delay: anime.stagger(200, { start: 7000 }),
+            autoplay: false,
+        });
+
+        const animate5 = anime({
+            targets: [
+                document.querySelectorAll(".info"),
+                document.querySelectorAll(".inp_field"),
+                ".message",
+                ".submit",
+            ],
+            translateY: [50, 0],
+            rotateX: [90, 0],
+            opacity: [0, 1],
+            delay: anime.stagger(300, { start: 1000 }),
+            duration: 750,
+            autoplay: false,
+            easing: "easeOutQuint",
+        });
+
+        const animate6 = anime({
+            targets: ['.services .t_dummy', '.services .hero-text'],
+            duration: 1000,
+            scaleX: [0, 1],
+            delay: anime.stagger(300, { start: 1000 }),
+            autoplay: false,
+        });
+
+        function resize() {
+            if (window.innerWidth <= 632) {
+                animate5.play();
+                animate3.play();
+                animate4.play();
+                animate6.play();
+            }
+        }
+        resize();
+        window.addEventListener("resize", resize);
+    </script>
+</body>
+
+</html>
